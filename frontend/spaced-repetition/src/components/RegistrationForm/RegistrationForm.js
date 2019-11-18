@@ -47,35 +47,38 @@ class RegistrationForm extends Component {
           {error && <p>{error}</p>}
         </div>
         <div>
-          <Label htmlFor='registration-name-input'>
+          {/* <Label htmlFor='registration-name-input'>
             Enter your name<Required />
-          </Label>
+          </Label> */}
           <Input
             ref={this.firstInput}
             id='registration-name-input'
             name='name'
             required
+            placeholder='Enter you name'
           />
         </div>
         <div>
-          <Label htmlFor='registration-username-input'>
+          {/* <Label htmlFor='registration-username-input'>
             Choose a username<Required />
-          </Label>
+          </Label> */}
           <Input
             id='registration-username-input'
             name='username'
             required
+            placeholder='Choose a username'
           />
         </div>
         <div>
-          <Label htmlFor='registration-password-input'>
+          {/* <Label htmlFor='registration-password-input'>
             Choose a password<Required />
-          </Label>
+          </Label> */}
           <Input
             id='registration-password-input'
             name='password'
             type='password'
             required
+            placeholder='Choose a password'
           />
         </div>
         <footer>
@@ -83,7 +86,7 @@ class RegistrationForm extends Component {
             Sign up
           </Button>
           {' '}
-          <Link to='/login'>Already have an account?</Link>
+          <Link to='/login' style={{ textDecoration: 'none'}}>Already have an account?</Link>
         </footer>
       </form>
     )
