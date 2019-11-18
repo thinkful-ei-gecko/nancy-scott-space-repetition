@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken')
 function makeKnexInstance() {
   return knex({
     client: 'pg',
-    connection: process.env.TEST_DB_URL,
+    connection: process.env.TEST_DATABASE_URL,
   })
 }
 
@@ -51,36 +51,36 @@ function makeLanguagesAndWords(user) {
   const words = [
     {
       id: 1,
-      original: 'original 1',
-      translation: 'translation 1',
+      code_img: 'original 1',
+      name: 'translation 1',
       language_id: 1,
       next: 2,
     },
     {
       id: 2,
-      original: 'original 2',
-      translation: 'translation 2',
+      code_img: 'original 2',
+      name: 'translation 2',
       language_id: 1,
       next: 3,
     },
     {
       id: 3,
-      original: 'original 3',
-      translation: 'translation 3',
+      code_img: 'original 3',
+      name: 'translation 3',
       language_id: 1,
       next: 4,
     },
     {
       id: 4,
-      original: 'original 4',
-      translation: 'translation 4',
+      code_img: 'original 4',
+      name: 'translation 4',
       language_id: 1,
       next: 5,
     },
     {
       id: 5,
-      original: 'original 5',
-      translation: 'translation 5',
+      code_img: 'original 5',
+      name: 'translation 5',
       language_id: 1,
       next: null,
     },

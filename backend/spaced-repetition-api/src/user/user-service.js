@@ -46,7 +46,7 @@ const UserService = {
       const [languageId] = await trx
         .into('language')
         .insert([
-          { name: 'French', user_id },
+          { name: 'Algorithms', user_id },
         ], ['id'])
 
       // when inserting words,
@@ -58,23 +58,27 @@ const UserService = {
         .first()
 
       const languageWords = [
-        ['entraine toi', 'practice', 2],
-        ['bonjour', 'hello', 3],
-        ['maison', 'house', 4],
-        ['développeur', 'developer', 5],
-        ['traduire', 'translate', 6],
-        ['incroyable', 'amazing', 7],
-        ['chien', 'dog', 8],
-        ['chat', 'cat', null],
+        ['quickSort.png', 'quick sort', 2],
+        ['bubbleSort.png', 'bubble sort', 3],
+        ['mergeSort.png', 'merge sort', 4],
+        ['heapSort.png', 'heap sort', 5],
+        ['combSort.png', 'comb sort', 6],
+        ['insertionSort.png', 'insertion sort', 7],
+        ['selectionSort.png', 'selection sort', 8],
+        ['binarySearch.png', 'binary search', 9],
+        ['linearSearch.png', 'linear search', 10],
+        ['inOrderTraversal.png', 'in-order traversal', 11],
+        ['preOrderTraversal.png', 'pre-order traversal', 12],
+        ['postOrderTraversal.png', 'post-order traversal', null],
       ]
 
       const [languageHeadId] = await trx
         .into('word')
         .insert(
-          languageWords.map(([original, translation, nextInc]) => ({
+          languageWords.map(([code_img, name, nextInc]) => ({
             language_id: languageId.id,
-            original,
-            translation,
+            code_img,
+            name,
             next: nextInc
               ? Number(seq.last_value) + nextInc
               : null

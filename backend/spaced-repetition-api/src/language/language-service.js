@@ -19,8 +19,8 @@ const LanguageService = {
       .select(
         'id',
         'language_id',
-        'original',
-        'translation',
+        'name',
+        'code_img',
         'next',
         'memory_value',
         'correct_count',

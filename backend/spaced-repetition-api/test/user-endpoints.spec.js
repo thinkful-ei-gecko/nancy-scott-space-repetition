@@ -118,7 +118,7 @@ describe('User Endpoints', function () {
         .expect(400, { error: `Username already taken` })
     })
 
-    describe(`Given a valid user`, () => {
+    describe.only(`Given a valid user`, () => {
       it(`responds 201, serialized user with no password`, () => {
         const newUser = {
           username: 'test username',
@@ -172,17 +172,21 @@ describe('User Endpoints', function () {
           name: 'test name',
         }
         const expectedList = {
-          name: 'French',
+          name: 'Algorithms',
           total_score: 0,
           words: [
-            { original: 'entraine toi', translation: 'practice' },
-            { original: 'bonjour', translation: 'hello' },
-            { original: 'maison', translation: 'house' },
-            { original: 'développeur', translation: 'developer' },
-            { original: 'traduire', translation: 'translate' },
-            { original: 'incroyable', translation: 'amazing' },
-            { original: 'chien', translation: 'dog' },
-            { original: 'chat', translation: 'cat' },
+            { code_img: 'quickSort.png', name: 'quick sort' },
+            { code_img: 'bubbleSort.png', name: 'bubble sort' },
+            { code_img: 'mergeSort.png', name: 'merge sort' },
+            { code_img: 'heapSort.png', name: 'heap sort' },
+            { code_img: 'combSort.png', name: 'comb sort' },
+            { code_img: 'insertionSort.png', name: 'insertion sort' },
+            { code_img: 'selectionSort.png', name: 'selection sort' },
+            { code_img: 'binarySearch.png', name: 'binary search' },
+            { code_img: 'linearSearch.png', name: 'linear search' },
+            { code_img: 'inOrderTraversal', name: 'in-order traversal' },
+            { code_img: 'preOrderTraversal.png', name: 'pre-order traversal' },
+            { code_img: 'postOrderTraversal.png', name: 'post-order traversal' },
           ]
         }
         return supertest(app)
